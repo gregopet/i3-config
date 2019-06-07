@@ -46,6 +46,9 @@ mouse_warping none
 # Remember which workspace I came from and let me return by repeating command
 workspace_auto_back_and_forth yes
 
+# Show a list of all windows using rofi
+bindsym $mod+space exec rofi -show window
+
 # Volume controls - https://faq.i3wm.org/question/125/how-to-change-the-systems-volume.1.html
 set $firstSink $(pactl list short sinks | head -n 1 | awk '{print $1}')
 set $resetVolumeStatus pkill -RTMIN+10 i3blocks
@@ -154,7 +157,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# TODO: find a better keybind for these (rofi takes the default)
+bindsym $mod+backslash focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
