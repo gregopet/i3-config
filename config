@@ -49,11 +49,11 @@ workspace_auto_back_and_forth yes
 # Volume controls - https://faq.i3wm.org/question/125/how-to-change-the-systems-volume.1.html
 set $firstSink $(pactl list short sinks | head -n 1 | awk '{print $1}')
 set $resetVolumeStatus pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $firstSink +7%
+bindsym XF86AudioRaiseVolume exec --no-startup-id BLOCK_BUTTON=4 ~/.config/i3/scripts/volume.py
 bindsym XF86AudioRaiseVolume --release exec $resetVolumeStatus
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $firstSink -7%
+bindsym XF86AudioLowerVolume exec --no-startup-id BLOCK_BUTTON=5 ~/.config/i3/scripts/volume.py
 bindsym XF86AudioLowerVolume --release exec $resetVolumeStatus
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $firstSink toggle
+bindsym XF86AudioMute exec --no-startup-id BLOCK_BUTTON=1 ~/.config/i3/scripts/volume.py
 bindsym XF86AudioMute --release exec $resetVolumeStatus
 
 # Mic volume controls
