@@ -12,7 +12,7 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [class=".*"] title_format "<span foreground='#FCB033'>%class</span> %title"
 
 # Clipboard management using clipnotify & rofi
-exec --no-startup-id clipmenud
+exec --no-startup-id CM_SELECTIONS=clipboard clipmenud
 bindsym $alt+grave exec CM_LAUNCHER=rofi CM_HISTLENGTH=20 clipmenu
 
 # Avoid tiling popups, dropdown windows from plasma
