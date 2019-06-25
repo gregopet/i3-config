@@ -203,8 +203,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move workspaces via Keyboard
-bindsym $mod+Prior move workspace to output left
-bindsym $mod+Next move workspace to output right
+bindsym $mod+Shift+Prior move workspace to output left
+bindsym $mod+Shift+Next move workspace to output right
+bindsym $mod+Prior focus output left
+bindsym $mod+Next focus output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
